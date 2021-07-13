@@ -12,7 +12,6 @@
 export default {
   async asyncData({$axios}) {
     const contents = await $axios.$get('/content')
-    // this.contents = await contentService.getPackages();
     return {
       contents
     }

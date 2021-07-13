@@ -28,15 +28,15 @@
       <v-btn text color="blue darken-1" @click="reveal = true"> ver más </v-btn>
       <v-spacer></v-spacer>
       <v-btn text color="blue darken-4"
-        ><router-link
+        ><nuxt-link
           :to="{
+            name: 'contents-id',
             params: {
-              content: content,
+              id: content.id,
             },
-            name: 'Package',
           }"
           style="text-decoration: none; color: inherit"
-          >Ir a la ficha</router-link
+          >Ir a la ficha</nuxt-link
         ></v-btn
       >
     </v-card-actions>
@@ -84,6 +84,9 @@
 <script>
 export default {
   name: 'ContentCard',
+  props: {
+    content: Object,
+  },
   data: () => ({
     loading: false,
     selection: 1,
@@ -94,9 +97,6 @@ export default {
       this.loading = true
       setTimeout(() => (this.loading = false), 2000)
     },
-  },
-  props: {
-    content: Object,
   },
 }
 </script>
