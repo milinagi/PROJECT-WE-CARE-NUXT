@@ -1,4 +1,4 @@
-# project-we-care-front
+# PROJECT-WE-CARE-NUXT
 
 ## Build Setup
 
