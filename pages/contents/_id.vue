@@ -22,7 +22,7 @@
       <v-col xs="12" sm="4" md="3" lg="2">
         <!-- <v-sheet rounded="lg" min-height="268"> -->
         <v-card height="420">
-          <v-img height="280" src="~/assets/alexprofile1.jpg"></v-img>
+          <v-img height="280" src="/alexprofile1.jpg"></v-img>
           <v-card-title>{{ content.author.name }}</v-card-title>
           <v-card-text>
             <v-row align="center" class="mx-0">
@@ -117,14 +117,8 @@
 
 <script>
 export default {
-  data() {
-    return {
-      content: null,
-    }
-  },
-  async mounted() {
-    const content = await this.$axios.$get(`/content/${this.$route.params.id}`)
-    this.content = content
+  async asyncData({$axios, params}) {
+    return {content: await $axios.$get(`/content/${params.id}`)};
   },
 }
 </script>

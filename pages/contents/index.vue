@@ -11,10 +11,7 @@
 <script>
 export default {
   async asyncData({$axios}) {
-    const contents = await $axios.$get('/content')
-    return {
-      contents
-    }
-  },
-};
+    return {contents: await $axios.$get('/content')};
+  }
+}
 </script>

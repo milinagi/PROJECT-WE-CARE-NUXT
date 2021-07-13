@@ -29,12 +29,7 @@
       <v-spacer></v-spacer>
       <v-btn text color="blue darken-4"
         ><nuxt-link
-          :to="{
-            name: 'contents-id',
-            params: {
-              id: content.id,
-            },
-          }"
+          :to="{ path: `/contents/${content.id}` }"
           style="text-decoration: none; color: inherit"
           >Ir a la ficha</nuxt-link
         ></v-btn
@@ -59,9 +54,8 @@
 
           <v-list-item-avatar tile size="80">
             <v-avatar size="80">
-              <v-img src="../assets/alexprofile1.jpg"></v-img>
+              <v-img src="/profile1.png"></v-img>
             </v-avatar>
-            <!-- <v-img src="../assets/profile1.png"></v-img> -->
           </v-list-item-avatar>
         </v-list-item>
 

@@ -6,8 +6,8 @@
       <v-toolbar-title>WE CARE</v-toolbar-title>
 
       <v-btn
-        v-for="link in linksHeader"
-        :key="link"
+        v-for="(link,idx) in linksHeader"
+        :key="idx"
         color="white"
         text
         rounded
@@ -48,8 +48,8 @@
     <v-footer color="primary lighten-1" padless>
       <v-row justify="center" no-gutters>
         <v-btn
-          v-for="link in linksFooter"
-          :key="link"
+          v-for="(link,idx) in linksFooter"
+          :key="idx"
           color="white"
           text
           rounded
@@ -93,7 +93,7 @@ export default {
 
 <style lang="scss">
 #app {
-  background-image: url('./static/background01.png');
+  background-image: url('~/static/background01.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
